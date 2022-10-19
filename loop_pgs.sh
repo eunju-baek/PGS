@@ -2,9 +2,7 @@
 #!usr/bin/python
 
 
-for entry in /BiO/enju07/0_md/3_PGS/0_CAD/*.txt
-
+for FILE in `ls *.txt`
 do
-python score.py ${entry}
-
+        python score.py $FILE
 done
