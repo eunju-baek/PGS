@@ -54,7 +54,6 @@ mt3 <- glm(T2D ~ per3 +X31.0.0+X21022.0.0+X22009.0.1+X22009.0.2+X22009.0.3+X2200
 mt5 <- glm(T2D ~ per5 +X31.0.0+X21022.0.0+X22009.0.1+X22009.0.2+X22009.0.3+X22009.0.4+X22009.0.5+X22009.0.6+X22009.0.7+X22009.0.8+X22009.0.9+X22009.0.10+array,data=per5,family = binomial)
 mt10 <- glm(T2D ~ per10 +X31.0.0+X21022.0.0+X22009.0.1+X22009.0.2+X22009.0.3+X22009.0.4+X22009.0.5+X22009.0.6+X22009.0.7+X22009.0.8+X22009.0.9+X22009.0.10+array,data=per10,family = binomial)
 
-print(summary(mt0))
 
 sum0 <- NagelkerkeR2(mt0)
 sum1 <- NagelkerkeR2(mt1)
@@ -73,7 +72,7 @@ for(i in seq){
 
 summat <- data.frame(summat)
 rownames(summat) <- c("st_score","per1","per3","per5","per10")
-colnames(summat) <- c("Beta","SE","Z","P")
+colnames(summat) <- c("Beta","SE","Z","P","N","NagelkerkeR2")
 
 fwrite(p1,paste('pheno_',name2,'.txt',sep=''),sep="\t",row.names=F,na="NA",quote=F)
 fwrite(summat,paste('results_',name2,'.txt',sep=""),sep='\t',quote=F,row.names=T)
