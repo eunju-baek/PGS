@@ -35,10 +35,10 @@ pheno <- fread(Pheno,data.table=F)
 p1 <- left_join(pheno,a,by="FID")
 p1 <- p1 %>% mutate(st_score = scale(score)) 
 p1 <- p1 %>% mutate(per = ntile(score,100))
-p1 <- p1 %>% mutate(per1 = ifelse(per>99,'per1',ifelse(per>=40&per<=60,"per40-60","none")))
-p1 <- p1 %>% mutate(per3 = ifelse(per>97,'per3',ifelse(per>=40&per<=60,"per40-60","none")))
-p1 <- p1 %>% mutate(per5 = ifelse(per>95,'per5',ifelse(per>=40&per<=60,"per40-60","none")))
-p1 <- p1 %>% mutate(per10 = ifelse(per>90,'per10',ifelse(per>=40&per<=60,"per40-60","none")))
+p1 <- p1 %>% mutate(per1 = ifelse(per>99,'per1',ifelse(per>=40&per<60,"per40-60","none")))
+p1 <- p1 %>% mutate(per3 = ifelse(per>97,'per3',ifelse(per>=40&per<60,"per40-60","none")))
+p1 <- p1 %>% mutate(per5 = ifelse(per>95,'per5',ifelse(per>=40&per<60,"per40-60","none")))
+p1 <- p1 %>% mutate(per10 = ifelse(per>90,'per10',ifelse(per>=40&per<60,"per40-60","none")))
 
 
 
