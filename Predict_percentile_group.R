@@ -1,4 +1,5 @@
-## Preparation of binning
+## Specify ranges and groups
+
 
 '''
  sc_min$per
