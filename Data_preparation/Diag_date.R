@@ -11,5 +11,9 @@ for(i in 1:nrow(a1)){
 ll[[i]] <-  on(b1[i, grep(a1[i, ], pattern = paste(dc, collapse = "|"))])}
 
 
-
 ll2 <- as.data.frame(ll)
+
+id <- b1$eid
+                     
+rmind <-which(sapply(ll,function(x) inherits(x,"data.frame")))
+id2 <- id[-rmind]
